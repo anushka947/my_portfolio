@@ -1,0 +1,11 @@
+export { HeroScene } from "./HeroScene";
+export { HeroSection } from "./HeroSection";
+export { Navigation } from "./Navigation";
+export { AboutSection } from "./AboutSection";
+export { SkillsSection } from "./SkillsSection";
+export { ExperienceSection } from "./ExperienceSection";
+export { EducationSection } from "./EducationSection";
+export { ProjectsSection } from "./ProjectsSection";
+export { ContactSection } from "./ContactSection";
+export { Footer } from "./Footer";
+export { CustomCursor } from "./CustomCursor";
