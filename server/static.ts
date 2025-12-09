@@ -3,7 +3,9 @@ import fs from "fs";
 import path from "path";
 
 export function serveStatic(app: Express) {
-  const distPath = path.resolve(__dirname, "public");
+  // Vite now emits assets into dist/ (same directory as the bundled server),
+  // so we serve that folder directly.
+  const distPath = path.resolve(__dirname);
   if (!fs.existsSync(distPath)) {
     throw new Error(
       `Could not find the build directory: ${distPath}, make sure to build the client first`,

@@ -57,7 +57,9 @@ export default defineConfig({
   },
   root: path.resolve(import.meta.dirname, "client"),
   build: {
-    outDir: path.resolve(import.meta.dirname, "dist/public"),
+    // Emit the client build directly into dist/ so Vercel can pick up index.html
+    // as the root file without extra configuration.
+    outDir: path.resolve(import.meta.dirname, "dist"),
     emptyOutDir: true,
     rollupOptions: {
       // Silence noisy PostCSS "from" warnings emitted by third-party plugins.
