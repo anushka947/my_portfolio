@@ -72,10 +72,10 @@ export function HeroSection() {
               className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight"
             >
               <span className="gradient-text animate-gradient-shift" style={{ backgroundSize: "200% 200%" }}>
-                Creative
+                Anushka Kumari
               </span>
               <br />
-              <span className="text-foreground">Developer</span>
+              <span className="text-foreground">Creative Developer</span>
             </h1>
           </div>
 
@@ -107,6 +107,14 @@ export function HeroSection() {
             >
               Get In Touch
             </Button>
+          </div>
+
+          <div className="pt-6 flex justify-center">
+            <img
+              src="/Anushka.jpg"
+              alt="Anushka Kumari"
+              className="w-32 h-32 rounded-full object-cover border-2 border-neon-pink shadow-lg"
+            />
           </div>
 
           <div className="flex items-center justify-center gap-4 pt-4">
