@@ -2,6 +2,22 @@ import { build as esbuild } from "esbuild";
 import { build as viteBuild } from "vite";
 import { rm, readFile } from "fs/promises";
 
+// Silence noisy PostCSS "from" warnings from third-party plugins.
+const originalWarn = console.warn;
+console.warn = (...args) => {
+  if (
+    args.some(
+      (arg) =>
+        typeof arg === "string" &&
+        (arg.includes("postcss.parse") ||
+          (arg.includes("vision_bundle.mjs") && arg.includes("Use of eval"))),
+    )
+  ) {
+    return;
+  }
+  originalWarn(...args);
+};
+
 // server deps to bundle to reduce openat(2) syscalls
 // which helps cold start times
 const allowlist = [

@@ -49,12 +49,12 @@ export function CustomCursor() {
       const isInteractive =
         target.tagName === "BUTTON" ||
         target.tagName === "A" ||
-        target.closest("button") ||
-        target.closest("a") ||
+        target.closest("button") !== null ||
+        target.closest("a") !== null ||
         target.dataset.interactive === "true" ||
         window.getComputedStyle(target).cursor === "pointer";
 
-      setIsPointer(isInteractive);
+      setIsPointer(Boolean(isInteractive));
     };
 
     document.addEventListener("mousemove", handleMouseMove);
